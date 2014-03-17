@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="25246bibouh123.WikiOnePiece" Publisher="CN=4F652775-655B-453A-A8E1-C7B21A2D7901" Version="1.0.0.12" />
+  <Properties>
+    <DisplayName>Wiki One Piece</DisplayName>
+    <PublisherDisplayName>bibouh123</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Wiki_One_Piece.App">
+      <VisualElements DisplayName="Wiki One Piece" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Cette Application est une Encyclopédie sur Les Personnage de fameux Manga One Piece . Elle contient la description et l'histoire des différents personnage de Manga, elle permet d'aider les utilisateur à bien comprendre l'univers de One piece." ForegroundText="light" BackgroundColor="#464646">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.search" />
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <DeviceCapability Name="location" />
+  </Capabilities>
+</Package>

@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0086)https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose -->
+<html xmlns="http://www.w3.org/1999/xhtml" class=" js safari chrome"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RoundCube Webmail :: Composer un nouveau message</title>
+<link rel="index" href="https://ssl0.ovh.net/roundcube/?_task=mail">
+<link rel="shortcut icon" href="https://ssl0.ovh.net/roundcube/skins/default/images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="./RoundCube Webmail    Composer un nouveau message_files/common.css">
+
+<link rel="stylesheet" type="text/css" href="./RoundCube Webmail    Composer un nouveau message_files/mail.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="./RoundCube Webmail    Composer un nouveau message_files/safari.css">
+
+<link rel="stylesheet" type="text/css" href="./RoundCube Webmail    Composer un nouveau message_files/googiespell.css">
+<script type="text/javascript" async="" src="./RoundCube Webmail    Composer un nouveau message_files/adschrome.js"></script><script type="text/javascript" src="./RoundCube Webmail    Composer un nouveau message_files/functions.js"></script>
+<script type="text/javascript" src="./RoundCube Webmail    Composer un nouveau message_files/splitter.js"></script>
+<style type="text/css">
+#compose-attachments { width: 170px; }
+#compose-container { left: 180px;
+
+}
+</style>
+
+<script type="text/javascript" src="./RoundCube Webmail    Composer un nouveau message_files/jquery-1.4.min.js"></script>
+<script type="text/javascript" src="./RoundCube Webmail    Composer un nouveau message_files/common.js"></script>
+<script type="text/javascript" src="./RoundCube Webmail    Composer un nouveau message_files/app.js"></script>
+<script type="text/javascript" src="./RoundCube Webmail    Composer un nouveau message_files/tiny_mce.js"></script>
+<script type="text/javascript" src="./RoundCube Webmail    Composer un nouveau message_files/editor.js"></script>
+<script type="text/javascript" src="./RoundCube Webmail    Composer un nouveau message_files/googiespell.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+
+var rcmail = new rcube_webmail();
+rcmail.set_env({"task":"mail","request_token":"ce16effd22e2c0e590c73b923bda7983","keep_alive":60,"action":"compose","comm_path":".\/?_task=mail","drafts_mailbox":"INBOX.Drafts","draft_autosave":300,"mailbox":"INBOX","sig_above":null,"top_posting":null,"show_sig":true,"compose_mode":"reply","cancelicon":"skins\/default\/images\/icons\/delete.png","loadingicon":"skins\/default\/images\/display\/loading_blue.gif","attachments":[],"signatures":[],"composebody":"compose-body","spellcheck_langs":"Dansk=da,Deutsch=de,English=en,Espa\u00f1ol=es,+Fran\u00e7ais=fr,Italiano=it,Nederlands=nl,Polski=pl,Portugu\u00eas=pt,Suomi=fi,Svenska=sv"});
+rcmail.add_label("loading","Chargement...");
+rcmail.add_label("servererror","Erreur Serveur !");
+rcmail.add_label("nosubject","(pas de sujet)");
+rcmail.add_label("nosenderwarning","Veuillez renseigner l'adresse d'exp\u00e9diteur");
+rcmail.add_label("norecipientwarning","Veuillez ajouter au moins un destinataire");
+rcmail.add_label("nosubjectwarning","Le champ \u00ab Objet \u00bb est vide. Souhaitez-vous le renseigner maintenant ?");
+rcmail.add_label("cancel","Annuler");
+rcmail.add_label("nobodywarning","Envoyer ce message sans texte ?");
+rcmail.add_label("notsentwarning","Le message n'a pas \u00e9t\u00e9 envoy\u00e9. Voulez-vous abandonner ce message ?");
+rcmail.add_label("notuploadedwarning","Toutes les pi\u00e8ces jointes ne sont pas encore envoy\u00e9es pour le moment. Merci d'attendre ou d'annuler l'envoi.");
+rcmail.add_label("savingmessage","Sauvegarde du message...");
+rcmail.add_label("sendingmessage","Message en cours d'envoi...");
+rcmail.add_label("messagesaved","Message sauvegard\u00e9 dans Brouillons");
+rcmail.add_label("converting","Suppression de la mise en forme...");
+rcmail.add_label("editorwarning","Passer \u00e0 l'\u00e9diteur texte seul causera la perte du formatage du texte. Voulez-vous continuer ?");
+rcmail.add_label("searching","En cours de recherche...");
+rcmail.add_label("uploading","Envoi du fichier...");
+rcmail.add_label("fileuploaderror","Transfert du fichier \u00e9chou\u00e9");
+rcmail.gui_container("taskbar","taskbar");
+rcmail.gui_container("toolbar","compose-toolbar");
+rcmail.add_label("checking","V\u00e9rification...");
+rcmail.register_button('mail', 'rcmbtn100', 'link', '', '', '');
+rcmail.register_button('addressbook', 'rcmbtn101', 'link', '', '', '');
+rcmail.register_button('settings', 'rcmbtn102', 'link', '', '', '');
+rcmail.register_button('logout', 'rcmbtn103', 'link', '', '', '');
+rcmail.gui_object('message', 'message');
+rcmail.register_button('list', 'rcmbtn104', 'link', 'button back', 'button backSel', '');
+rcmail.register_button('send', 'rcmbtn105', 'link', 'button send', 'button sendSel', '');
+rcmail.register_button('spellcheck', 'rcmbtn106', 'link', 'button spellcheck', 'button spellcheckSel', '');
+rcmail.register_button('insert-sig', 'rcmbtn108', 'link', 'button insertsig', 'button insertsigSel', '');
+rcmail.register_button('savedraft', 'rcmbtn109', 'link', 'button savedraft', 'button savedraftSel', '');
+rcmail.gui_object('attachmentlist', 'rcmAttachmentList');
+rcmail.gui_object('messageform', 'form');
+rcmail_editor_init("skins/default",
+    "fr", 1, "");
+rcmail.register_button('send', 'rcmbtn110', 'input', '', '', '');
+rcmail.register_button('list', 'rcmbtn111', 'input', '', '', '');
+rcmail.gui_object('uploadbox', 'attachment-form');
+/* ]]> */
+</script>
+<style type="text/css"></style></head>
+<body onload="rcube_init_mail_ui()">
+
+<div id="taskbar">
+<a class="button-mail" id="rcmbtn100" href="https://ssl0.ovh.net/roundcube/?_task=mail" onclick="return rcmail.command(&#39;mail&#39;,&#39;&#39;,this)">Courriel</a>
+<a class="button-addressbook" id="rcmbtn101" href="https://ssl0.ovh.net/roundcube/?_task=addressbook" onclick="return rcmail.command(&#39;addressbook&#39;,&#39;&#39;,this)">Carnet d'adresses</a>
+<a class="button-settings" id="rcmbtn102" href="https://ssl0.ovh.net/roundcube/?_task=settings" onclick="return rcmail.command(&#39;settings&#39;,&#39;&#39;,this)">Préférences</a>
+
+<a class="button-logout" id="rcmbtn103" href="https://ssl0.ovh.net/roundcube/?_task=logout" onclick="return rcmail.command(&#39;logout&#39;,&#39;&#39;,this)">Quitter</a>
+</div>
+<div id="header"><a href="https://ssl0.ovh.net/roundcube/"><img id="logo" src="./RoundCube Webmail    Composer un nouveau message_files/roundcube_logo.png" alt="logo" title="RoundCube Webmail"></a></div>
+
+<div id="message"></div>
+
+
+<form name="form" action="https://ssl0.ovh.net/roundcube/" method="post">
+<input type="hidden" name="_token" value="ce16effd22e2c0e590c73b923bda7983">
+
+<div id="messagetoolbar">
+    <a class="button back" title="Retourner à la liste des messages" id="rcmbtn104" href="https://ssl0.ovh.net/roundcube/?_task=mail&_action=list" onclick="return rcmail.command(&#39;list&#39;,&#39;&#39;,this)"> </a>
+    <a class="button send" title="Envoyer le message maintenant" id="rcmbtn105" href="https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose#" onclick="return rcmail.command(&#39;send&#39;,&#39;&#39;,this)"> </a>
+    <a class="button spellcheck" title="Vérifier l&#39;orthographe" id="rcmbtn106" href="https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose#" onclick="return rcmail.command(&#39;spellcheck&#39;,&#39;&#39;,this)"> </a>
+    <a class="button attach" title="Joindre un fichier" onclick="rcmail_ui.show_popup(&#39;uploadmenu&#39;, true);return false" id="rcmbtn107" href="https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose#"> </a>
+    <a class="buttonPas insertsig" title="Insérer la signature" id="rcmbtn108" href="https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose#" onclick="return rcmail.command(&#39;insert-sig&#39;,&#39;&#39;,this)"> </a>
+    <a class="button savedraft" title="Sauvegarder ce brouillon" id="rcmbtn109" href="https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose#" onclick="return rcmail.command(&#39;savedraft&#39;,&#39;&#39;,this)"> </a>
+    
+    <a id="composemenulink" class="button messagemenu" title="Options du message" onclick="rcmail_ui.show_popup(&#39;composemenu&#39;, true);return false" href="https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose#"> </a>
+</div>
+
+<div id="mainscreen">
+
+<div id="compose-attachments" style="width: 170px;">
+<div class="boxtitle">Fichiers joints</div>
+<div class="boxlistcontent">
+    <ul id="rcmAttachmentList">
+</ul>
+
+</div>
+<div class="boxfooter">
+  <a id="uploadmenulink" title="Joindre un fichier" class="button addgroup" onclick="rcmail_ui.show_popup(&#39;uploadmenu&#39;, true);return false" href="https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose#"> </a>
+</div>
+</div>
+
+<script type="text/javascript">
+  var composesplitv = new rcube_splitter({id:'composesplitterv', p1: 'compose-attachments', p2: 'compose-container', orientation: 'v', relative: true, start: 175});
+  rcmail.add_onload('composesplitv.init()');
+</script>
+
+<div id="compose-container" style="left: 180px;">
+    <div id="compose-headers-div" style="width: 100%;">
+        <table border="0" cellspacing="0" cellpadding="1" id="compose-headers">
+        <tbody><tr>
+            <td class="title"><label for="_from">De</label></td>
+            <td class="editfield"><input type="hidden" name="_task" value="mail"><input type="hidden" name="_action" value="send"><select name="_from" id="_from" tabindex="1" onchange="rcmail.change_identity(this)">
+<option value="1377903" selected="selected">rabah.laouadi@pradeo.net</option>
+</select>
+</td>
+        </tr><tr>
+            <td class="title top"><label for="_to">À</label></td>
+            <td class="editfield"><textarea name="_to" spellcheck="false" id="_to" cols="70" rows="2" tabindex="2" autocomplete="off">Roland Ducournau &lt;ducour@lirmm.fr&gt;</textarea>
+</td>
+        </tr><tr id="compose-cc">
+            <td class="title top">
+                <a href="https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose#cc" onclick="return rcmail_ui.hide_header_form(&#39;cc&#39;);"><img src="./RoundCube Webmail    Composer un nouveau message_files/minus.gif" alt="" title="Supprimer"></a>
+                <label for="_cc">Cc</label>
+            </td>
+            <td class="editfield"><textarea name="_cc" spellcheck="false" id="_cc" cols="70" rows="2" tabindex="3" autocomplete="off"></textarea></td>
+        </tr><tr id="compose-bcc">
+            <td class="title top">
+                <a href="https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose#bcc" onclick="return rcmail_ui.hide_header_form(&#39;bcc&#39;);"><img src="./RoundCube Webmail    Composer un nouveau message_files/minus.gif" alt="" title="Supprimer"></a>
+                <label for="_bcc">Cci</label>
+            </td>
+            <td colspan="2" class="editfield"><textarea name="_bcc" spellcheck="false" id="_bcc" cols="70" rows="2" tabindex="4" autocomplete="off"></textarea></td>
+        </tr><tr id="compose-replyto">
+            <td class="title top">
+                <a href="https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose#replyto" onclick="return rcmail_ui.hide_header_form(&#39;replyto&#39;);"><img src="./RoundCube Webmail    Composer un nouveau message_files/minus.gif" alt="" title="Supprimer"></a>
+                <label for="_replyto">Répondre à</label>
+            </td>
+            <td class="editfield"><input name="_replyto" spellcheck="false" id="_replyto" size="70" tabindex="5" type="text"></td>
+        </tr><tr>
+            <td></td>
+            <td id="formlinks">
+                <a href="https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose#cc" onclick="return rcmail_ui.show_header_form(&#39;cc&#39;)" id="cc-link">Ajouter Cc</a>
+                <span class="separator">|</span>
+                <a href="https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose#bcc" onclick="return rcmail_ui.show_header_form(&#39;bcc&#39;)" id="bcc-link">Ajouter Cci</a>
+                <span class="separator">|</span>
+                <a href="https://ssl0.ovh.net/roundcube/?_task=mail&_id=2009504188521fc89e5dfbf&_action=compose#reply-to" onclick="return rcmail_ui.show_header_form(&#39;replyto&#39;)" id="replyto-link">Ajouter Répondre à</a>
+            </td>
+        </tr><tr>
+            <td class="title"><label for="compose-subject">Objet</label></td>
+            <td class="editfield"><input name="_subject" id="compose-subject" tabindex="6" spellcheck="true" value="Re: Rapport Version 0.5" type="text"></td>
+        </tr>
+        </tbody></table>
+    </div>
+    <div id="compose-div" style="top: 107px;">
+        <div class="boxlistcontent" style="overflow: hidden; top: 0">
+            <input type="hidden" name="_draft_saveid" value=""><input type="hidden" name="_draft" value="yes"><input type="hidden" name="_is_html" value="0"><textarea name="_message" id="compose-body" cols="70" rows="20" tabindex="7" style="width: 1138px; height: 385px;">On Wed, 28 Aug 2013 21:27:30 +0200, Roland Ducournau &lt;ducour@lirmm.fr&gt; wrote:
+&gt; je serai au labo de vers 10h à 16h environ...
+&gt; 
+&gt; -- 
+&gt; Roland Ducournau				http://www.lirmm.fr/~ducour
+&gt; LIRMM -- CNRS &amp; Université Montpellier 2	e-mail :  ducournau@lirmm.fr
+&gt; 161, rue Ada					tel :     +33 467 41 86 01
+&gt; 34095 Montpellier cedex 5 -- FRANCE		fax :     +33 467 41 85 00
+</textarea>
+
+<iframe name="savetarget" src="./RoundCube Webmail    Composer un nouveau message_files/blank.gif" style="width:0;height:0;border:none;visibility:hidden;"></iframe>
+        </div>
+        <div class="boxfooter">
+            <div id="compose-buttons">
+                <input type="button" class="button mainaction" tabindex="8" id="rcmbtn110" onclick="return rcmail.command(&#39;send&#39;,&#39;&#39;,this)" value="Envoyer le message maintenant">
+                <input type="button" class="button" tabindex="9" id="rcmbtn111" onclick="return rcmail.command(&#39;list&#39;,&#39;&#39;,this)" value="Annuler">
+            </div>
+            <div id="compose-editorfooter">
+                <span id="spellcheck-control" style="margin-right:10px"><span class="googie_check_spelling_link">Vérifier l'orthographe</span> <span class="googie_lang_3d_on"><img src="./RoundCube Webmail    Composer un nouveau message_files/change_lang.gif" alt="Change language" googie_action_btn="1"></span></span>
+                <span>
+                    <label>Type d'éditeur</label>
+                    <select name="editorSelector" tabindex="10" onchange="return rcmail_toggle_editor(this, &#39;compose-body&#39;, &#39;_is_html&#39;)">
+<option value="html">HTML</option>
+<option value="plain" selected="selected">texte brut</option>
+</select>
+
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="splitter splitter-v" style="position: absolute; visibility: visible; left: 171px; top: 0px; width: 10px; height: 100%;"></div></div>
+
+<div id="composeoptionsmenu" class="popupmenu">
+    <table>
+    <tbody><tr>
+        <td><label for="rcmcomposereceipt">Accusé de réception:</label></td>
+        <td><input name="_receipt" id="rcmcomposereceipt" value="1" type="checkbox"></td>
+    </tr><tr>
+        <td><label for="rcmcomposepriority">Priorité:</label></td>
+        <td><select name="_priority" id="rcmcomposepriority">
+<option value="5">La plus basse</option>
+<option value="4">Basse</option>
+<option value="0" selected="selected">Normale</option>
+<option value="2">Élevée</option>
+<option value="1">La plus élevée</option>
+</select>
+</td>
+    </tr><tr>
+        <td><label>Sauver le message envoyé dans:</label></td>
+        <td><select name="_store_target">
+<option value="">- ne pas sauver -</option>
+<option value="INBOX">Messages reçus</option>
+<option value="INBOX.Drafts">&nbsp;&nbsp;&nbsp;&nbsp;Brouillons</option>
+<option value="INBOX.Sent" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;Messages envoyés</option>
+<option value="INBOX.Junk">&nbsp;&nbsp;&nbsp;&nbsp;Indésirables</option>
+<option value="INBOX.Trash">&nbsp;&nbsp;&nbsp;&nbsp;Corbeille</option>
+<option value="Drafts">Drafts</option>
+<option value="Sent">Sent</option>
+<option value="Trash">Trash</option>
+</select>
+</td>
+    </tr>
+    </tbody></table>
+</div>
+
+</form>
+
+<div id="attachment-form" class="popupmenu"><form name="form" method="post" enctype="multipart/form-data" action="https://ssl0.ovh.net/roundcube/">
+<input type="hidden" name="_token" value="ce16effd22e2c0e590c73b923bda7983"><div><input size="40" type="file" name="_attachments[]"></div>
+<div class="hint">La taille maximum autorisée pour un fichier est 20 Mo</div>
+<div class="buttons"><input type="button" class="button mainaction" onclick="rcmail.command(&#39;send-attachment&#39;, this.form)" value="Joindre"></div>
+</form>
+</div>
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+
+$(document).ready(function(){ rcmail.init(); });
+var googie = new GoogieSpell('skins/default/images/googiespell/','?_task=utils&_action=spell&lang=');
+googie.lang_chck_spell = "Vérifier l\'orthographe";
+googie.lang_rsm_edt = "Retourner à l\'édition";
+googie.lang_close = "Fermer";
+googie.lang_revert = "Revenir à";
+googie.lang_no_error_found = "Aucune faute trouvée";
+googie.setLanguages({"da":"Dansk","de":"Deutsch","en":"English","es":"Espa\u00f1ol","fr":"Fran\u00e7ais","it":"Italiano","nl":"Nederlands","pl":"Polski","pt":"Portugu\u00eas","fi":"Suomi","sv":"Svenska"});
+googie.setCurrentLanguage('fr');
+googie.setSpellContainer('spellcheck-control');
+googie.decorateTextarea('compose-body');
+rcmail.set_env('spellcheck', googie);
+/* ]]> */
+</script>
+
+</body></html>

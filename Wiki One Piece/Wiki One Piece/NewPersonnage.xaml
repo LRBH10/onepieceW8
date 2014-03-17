@@ -1,0 +1,109 @@
+﻿<common:LayoutAwarePage
+    x:Name="pageRoot"
+    x:Class="Wiki_One_Piece.NewPersonnage"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Wiki_One_Piece"
+    xmlns:common="using:Wiki_One_Piece.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+
+        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
+        
+    </Page.Resources>
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid Style="{StaticResource LayoutRootStyle}">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/newpersonnage.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+            <TextBlock x:Name="pageTitle" x:Uid="newpersonnage" Grid.Column="1"  Style="{StaticResource PageHeaderTextStyle}"/>
+        </Grid>
+        <Image x:Name="ImagePersonnage" HorizontalAlignment="Left" Height="548" Margin="38,53,0,0" Grid.Row="1" VerticalAlignment="Top" Width="371"/>
+        <Button x:Uid="recharger" HorizontalAlignment="Left" Margin="299,417,0,0" Grid.Row="1" VerticalAlignment="Top" Width="110" Click="reloadimage_click"/>
+        <TextBox x:Name="ImageBox" HorizontalAlignment="Left" Margin="38,417,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Text="url image"/>
+        <TextBox x:Name="NameBox" HorizontalAlignment="Left" Height="29" Margin="569,11,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="167"/>
+        <TextBlock HorizontalAlignment="Left" Margin="450,11,0,0" Grid.Row="1" TextWrapping="Wrap" x:Uid="Nom" VerticalAlignment="Top" Height="32" Width="79"/>
+        <TextBox x:Name="TitreBox" HorizontalAlignment="Left" Height="29" Margin="888,11,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="167"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1098,11,0,0" Grid.Row="1" TextWrapping="Wrap" x:Uid="Role" VerticalAlignment="Top" Height="32" Width="79"/>
+        <TextBox x:Name="ContentBox" HorizontalAlignment="Left" Height="81" Margin="569,59,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="513"/>
+        <TextBlock HorizontalAlignment="Left" x:Uid="Content" Margin="450,59,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Height="32" Width="79"/>
+        <TextBlock x:Name="SpeekBox" HorizontalAlignment="Left" Margin="774,11,0,0" Grid.Row="1" TextWrapping="Wrap" x:Uid="Titre" VerticalAlignment="Top" Height="32" Width="79"/>
+        <TextBox x:Name="AppranceBox" HorizontalAlignment="Left" Height="81" Margin="569,152,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="513"/>
+        <TextBlock HorizontalAlignment="Left" Margin="450,152,0,0" Grid.Row="1" TextWrapping="Wrap" x:Uid="apparence" VerticalAlignment="Top" Height="32" Width="79"/>
+        <TextBox x:Name="RelationBox" HorizontalAlignment="Left" Height="81" Margin="569,342,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="513"/>
+        <TextBlock HorizontalAlignment="Left" Margin="450,342,0,0" Grid.Row="1" TextWrapping="Wrap" x:Uid="Relations" VerticalAlignment="Top" Height="32" Width="79"/>
+        <TextBox x:Name="CompetanceBox" HorizontalAlignment="Left" Height="81" Margin="569,443,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="513"/>
+        <TextBlock HorizontalAlignment="Left" Margin="450,443,0,0" Grid.Row="1" TextWrapping="Wrap" x:Uid="Competences" VerticalAlignment="Top" Height="32" Width="79"/>
+        <Button x:Uid="envoi" HorizontalAlignment="Left" Margin="774,547,0,0" Grid.Row="1" VerticalAlignment="Top" Width="308" Height="54" Click="sendemail_click"/>
+        <ComboBox x:Name="RoleBox" HorizontalAlignment="Left" Margin="1169,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="169" SelectedIndex="0">
+            <x:String>Capitane</x:String>
+            <x:String>Escrimeur</x:String>
+            <x:String>Cuisinier</x:String>
+            <x:String>Yonko</x:String>
+            <x:String>Marine</x:String>
+            <x:String>Docteur</x:String>
+            <x:String>Navigateur</x:String>
+            <x:String>Sniper</x:String>
+            <x:String>Musicien</x:String>
+            <x:String>Shichibukai</x:String>
+            <x:String>Vice-Amiral</x:String>
+            <x:String>Amiral</x:String>
+            <x:String>Charpentier</x:String>
+            <x:String>Autres...</x:String>
+        </ComboBox>
+        <TextBox x:Name="PersonnaliteBox" HorizontalAlignment="Left" Height="81" Margin="569,249,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="513"/>
+        <TextBlock HorizontalAlignment="Left" Margin="450,249,0,0" Grid.Row="1" TextWrapping="Wrap" x:Uid="Personnalite" VerticalAlignment="Top" Height="32" Width="79"/>
+
+        <VisualStateManager.VisualStateGroups>
+
+            <!-- Visual states reflect the application's view state -->
+            <VisualStateGroup x:Name="ApplicationViewStates">
+                <VisualState x:Name="FullScreenLandscape"/>
+                <VisualState x:Name="Filled"/>
+
+                <!-- The entire page respects the narrower 100-pixel margin convention for portrait -->
+                <VisualState x:Name="FullScreenPortrait">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PortraitBackButtonStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+
+                <!-- The back button and title have different styles when snapped -->
+                <VisualState x:Name="Snapped">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedBackButtonStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle" Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedPageHeaderTextStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</common:LayoutAwarePage>
